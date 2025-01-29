@@ -6,18 +6,15 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class UserController extends Controller
-{
-    // Listar todos os usuários
-    public function index()
-    {
+class UserController extends Controller {
+    // Listar todos os usuários 
+    public function index() {
         $users = User::all();
         return response()->json($users);
     }
 
     // Criar um novo usuário
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
@@ -34,10 +31,8 @@ class UserController extends Controller
     }
 
     // Mostrar um único usuário
-    public function show($id)
-    {
-        $user = User::find($id);
-
+    public function show($id) {
+        $user = User::findOrFail($id);
         if (!$user) {
             return response()->json(['message' => 'Usuário não encontrado'], 404);
         }
@@ -46,8 +41,7 @@ class UserController extends Controller
     }
 
     // Atualizar um usuário
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         $user = User::find($id);
 
         if (!$user) {
@@ -70,8 +64,7 @@ class UserController extends Controller
     }
 
     // Deletar um usuário
-    public function destroy($id)
-    {
+    public function destroy($id) {
         $user = User::find($id);
 
         if (!$user) {
