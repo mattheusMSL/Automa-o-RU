@@ -3,10 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var createDiv = document.createElement('div');
     var createH1 = document.createElement('h1');
     var hello = 'Hello, World!';
+    body.style.margin = '0';
     createDiv.style.margin = 'auto';
     createDiv.style.padding = 'auto';
     createDiv.style.height = '100vh';
-    createDiv.style.width = '100vw';
+    createDiv.style.width = '100%';
+    createDiv.style.backgroundColor = 'black';
     createDiv.style.display = 'flex';
     createDiv.style.justifyContent = 'center';
     createDiv.style.alignItems = 'center';
