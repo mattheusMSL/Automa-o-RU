@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const createH1: HTMLHeadingElement = document.createElement('h1');
   const hello: string = 'Hello, World!';
 
-
   body.style.margin = '0';
   createDiv.style.margin = 'auto';
   createDiv.style.padding = 'auto';
@@ -43,11 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
       #animated-text {
         font-size: 3rem;
         font-weight: bold;
-        background: linear-gradient(90deg, red, yellow, green, blue, purple);
+        background: linear-gradient(90deg, red, green, blue);
         background-size: 400% 400%; /* Make the gradient larger than the text */
         -webkit-background-clip: text; /* Clip the background to the text */
         color: transparent; /* Make the text color transparent to see the gradient */
-        animation: gradientShift 5s ease infinite;
+        animation: gradientShift 7s ease-in-out infinite;
       }
     `;
     

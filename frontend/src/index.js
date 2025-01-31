@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var animatedText = document.getElementById('animated-text');
     if (animatedText) {
         var style = document.createElement('style');
-        style.innerHTML = "\n      @keyframes gradientShift {\n        0% {\n          background-position: 0% 50%;\n        }\n        50% {\n          background-position: 100% 50%;\n        }\n        100% {\n          background-position: 0% 50%;\n        }\n      }\n\n      #animated-text {\n        font-size: 3rem;\n        font-weight: bold;\n        background: linear-gradient(90deg, red, yellow, green, blue, purple);\n        background-size: 400% 400%; /* Make the gradient larger than the text */\n        -webkit-background-clip: text; /* Clip the background to the text */\n        color: transparent; /* Make the text color transparent to see the gradient */\n        animation: gradientShift 5s ease infinite;\n      }\n    ";
+        style.innerHTML = "\n      @keyframes gradientShift {\n        0% {\n          background-position: 0% 50%;\n        }\n        50% {\n          background-position: 100% 50%;\n        }\n        100% {\n          background-position: 0% 50%;\n        }\n      }\n\n      #animated-text {\n        font-size: 3rem;\n        font-weight: bold;\n        background: linear-gradient(90deg, red, green, blue);\n        background-size: 400% 400%; /* Make the gradient larger than the text */\n        -webkit-background-clip: text; /* Clip the background to the text */\n        color: transparent; /* Make the text color transparent to see the gradient */\n        animation: gradientShift 7s ease-in-out infinite;\n      }\n    ";
         document.head.appendChild(style);
     }
 });
