@@ -12,8 +12,8 @@ class StudentController extends Controller
      * Display a listing of students.
      */
     public function index() {
-        $student = Student::all();
-        return response()->json($student);
+        $students = Student::all();
+        return response()->json($students);
     }
 
     /**
