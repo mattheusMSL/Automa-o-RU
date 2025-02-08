@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use \Exception as Exception;
 
 class UserController extends Controller {
     // Listar todos os usuários 
@@ -36,7 +37,6 @@ class UserController extends Controller {
         if (!$user) {
             return response()->json(['message' => 'Usuário não encontrado'], 404);
         }
-
         return response()->json($user);
     }
 
@@ -75,4 +75,22 @@ class UserController extends Controller {
 
         return response()->json(['message' => 'Usuário deletado com sucesso']);
     }
+
+    public function login(Request $id, $validated){
+        $userEmail = User::find($id)->email(); // pega o email do usuario 
+        $userPass = User::find($id)->password();// pega a senha do usuario 
+
+        $validated = $request->validate([ // recebe os dados do frontend e verifica se são validos
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+        try {
+         // compara se a senha e o email 
+        if($userEmail == $validated['email'] && $userPass == $validated['password']){ 
+            return response()->json(['message' => 'Usuário logado com sucesso']);
+        }
+        } catch (Exception $e) {
+            return response()->json(['message' => 'Usuário não encontrado'], 404);
+        }
+   }
 }
