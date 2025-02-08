@@ -1,0 +1,5 @@
+# Ignorar arquivos do frontend
+frontend/*
+
+# Ignorar arquivos do backend
+backend/*
