@@ -6,8 +6,7 @@ use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class StudentController extends Controller
-{
+class StudentController extends Controller {
     /**
      * Display a listing of students.
      */
