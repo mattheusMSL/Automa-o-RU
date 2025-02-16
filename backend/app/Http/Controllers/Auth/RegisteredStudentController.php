@@ -13,13 +13,15 @@ use Illuminate\Validation\Rules;
 use Inertia\Inertia;
 use Inertia\Response;
 
-class StudentRegisteredController extends Controller {
+class RegisteredStudentController extends Controller {
     
     public function create(): Response { 
         return Inertia::render('Auth/Register'); 
     }
 
     public function store(Request $request): RedirectResponse{
+
+        // validação dos dados como os dados devem chegar do frotend 
         $request->validate([
             'ra' => 'required|unique:'. Student::class,
             'name' => 'required|string|max:255',
@@ -27,13 +29,14 @@ class StudentRegisteredController extends Controller {
             'course' => 'required|string|string|lowercase|max:255',
             'password' => ['required', 'min:8', 'confirmed', Rules\Password::defaults()],
         ]);
-
+        // inserindo os dados validados do frontend no banco de dados 
         $student = Student::create([
             'ra' => $request->ra,
             'name' => $request->name,
             'email' => $request->email,
             'course' => $request->course,
             'password' => Hash::make($request->password),
+            'is_active' => true,
         ]);
 
         event(new Registered($student));

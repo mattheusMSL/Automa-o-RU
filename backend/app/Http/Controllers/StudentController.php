@@ -20,9 +20,9 @@ class StudentController extends Controller {
      */
     public function store(Request $request) {
         $request->validate([
-            'ra' => 'required|unique:students',
+            'ra' => 'required|unique:' . Student::class,
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:students',
+            'email' => 'required|email|unique:'. Student::class,
             'course' => 'required|string|max:255',
             'password' => 'required|string|min:8',
         ]);
