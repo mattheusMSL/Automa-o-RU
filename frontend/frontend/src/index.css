@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme{
+  --font-roboto: "Roboto", san-serif;
+  --font-inter: "Inter", serif;
+}
+
+:root {
+  background-color: #ffffff;
+  margin: 0;
+  background-image: url("/public/Decore.svg");
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  /* background-attachment: fixed; */
+  background-color: rgb(235, 231, 231);
+
+}
+

@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --font-roboto: 'Roboto', sans-serif;
+    --font-inter: 'Inter', serif;
+}
+/* body {
+   background-image: url('@/assets/Decore.svg');
+   background-size: auto;
+   background-repeat: no-repeat;
+   background-attachment: fixed; /* Make the background image static } */

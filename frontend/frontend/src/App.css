@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+:root {
+  background-color: #ffffff;
+  margin: 0;
+  background-image: url("/public/Decore.svg");
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  /* background-attachment: fixed; */
+  background-color: rgb(235, 231, 231);
+
+}
+
